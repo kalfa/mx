@@ -44,6 +44,7 @@
 #include "mx-tooltip.h"
 #include "mx-enum-types.h"
 #include "mx-settings.h"
+#include "mx-css-editor.h"
 
 /*
  * Forward declaration for sake of MxWidgetChild
@@ -955,6 +956,14 @@ mx_widget_get_paint_volume (ClutterActor       *actor,
   return clutter_paint_volume_set_from_allocation (volume, actor);
 }
 
+static gboolean
+_css_editor_init_timeout (gpointer data)
+{
+  mx_css_editor_init ();
+
+  return FALSE;
+}
+
 static void
 mx_widget_class_init (MxWidgetClass *klass)
 {
@@ -1065,6 +1074,8 @@ mx_widget_class_init (MxWidgetClass *klass)
                   G_TYPE_BOOLEAN, 3, G_TYPE_FLOAT, G_TYPE_FLOAT,
                   MX_TYPE_LONG_PRESS_ACTION);
 
+
+  g_timeout_add (0, _css_editor_init_timeout, NULL);
 }
 
 static MxStyle *

@@ -1,5 +1,7 @@
 NULL =
 
+SUBDIRS = js
+
 BUILT_SOURCES = 		\
 	mx-enum-types.h 	\
 	mx-enum-types.c 	\
@@ -34,6 +36,7 @@ source_h = \
 	$(top_srcdir)/mx/mx-box-layout.h		\
 	$(top_srcdir)/mx/mx-box-layout-child.h	\
 	$(top_srcdir)/mx/mx-combo-box.h 		\
+	$(top_srcdir)/mx/mx-css.h		\
 	$(top_srcdir)/mx/mx-button.h 		\
 	$(top_srcdir)/mx/mx-button-group.h 	\
 	$(top_srcdir)/mx/mx-deform-texture.h 	\
@@ -91,7 +94,7 @@ source_h = \
 	$(NULL)
 
 source_h_priv = \
-	$(top_srcdir)/mx/mx-css.h		\
+	$(top_srcdir)/mx/mx-css-editor.h	\
 	$(top_srcdir)/mx/mx-native-window.h	\
 	$(top_srcdir)/mx/mx-path-bar-button.h	\
 	$(top_srcdir)/mx/mx-progress-bar-fill.h	\
@@ -108,6 +111,7 @@ source_c = \
 	$(top_srcdir)/mx/mx-box-layout.c		\
 	$(top_srcdir)/mx/mx-box-layout-child.c	\
 	$(top_srcdir)/mx/mx-css.c		\
+	$(top_srcdir)/mx/mx-css-editor.c	\
 	$(top_srcdir)/mx/mx-combo-box.c		\
 	$(top_srcdir)/mx/mx-button.c 		\
 	$(top_srcdir)/mx/mx-button-group.c 	\
