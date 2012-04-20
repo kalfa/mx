@@ -1076,7 +1076,8 @@ mx_stylable_style_changed_internal (MxStylable          *stylable,
        */
       flags |= MX_STYLE_CHANGED_INVALIDATE_CACHE;
 
-      g_signal_emit (stylable, stylable_signals[STYLE_CHANGED], 0, flags);
+      if (MX_IS_STYLE (mx_stylable_get_style (stylable)))
+        g_signal_emit (stylable, stylable_signals[STYLE_CHANGED], 0, flags);
     }
 
   /* propagate the style-changed signal to children, since their style may
